@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos básicos del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página que se muestra en la pestaña del navegador -->
+    <title>Encriptador Texto</title>
+    <!-- Vinculación del archivo CSS externo para estilos -->
+    <link rel="stylesheet" href="./Styles/styles.css">
+</head>
+<body>
+    <!-- Contenedor principal de la aplicación -->
+    <div class="container">
+        <!-- Sección del encabezado que incluye el logo y el título -->
+        <div class="encabezado">
+            <div class="encabezadoLogoH1">
+                <!-- Logo de la aplicación -->
+                <img id="logo" src="./img/Candado.png" alt="">
+                <!-- Título principal de la aplicación -->
+                <h1>Encriptador de Texto</h1>
+            </div> 
+            
+            <!-- Nota indicando las restricciones del texto a encriptar -->
+            <h6>✴️No se permite Mayusculas o caracteres especiales</h6>
+        </div>
+
+        <!-- Contenedor para mostrar mensajes de error -->
+        <div id="mensajeError" class="mensaje-error"></div>
+
+        <!-- Contenedor principal para las áreas de ingreso y salida de texto -->
+        <div class="containerIngresoSalida">
+            <!-- Contenedor para el área de ingreso de texto -->
+            <div class="containerIngreso">
+                <!-- Área de texto donde el usuario ingresa el texto a encriptar/desencriptar -->
+                <textarea id="ingresoTexto" placeholder="Ingrese el texto aquí"></textarea>       
+            </div>
+
+            <!-- Contenedor para el área de salida de texto encriptado/desencriptado -->
+            <div class="containerSalida">
+                <div class="containerSalidaTextArea">
+                    <!-- Área de texto donde se muestra el resultado; es solo de lectura -->
+                    <textarea id="salidaTexto" placeholder="El texto encriptado/desencriptado aparecerá aquí" readonly></textarea>
+                    <!-- Imagen inicial oculta que se mostrará antes de la acción -->
+                    <img id="imagenInicial" src="./img/Muñeco.png" alt="Imagen Inicial" class="imagen-inicial">
+                </div>
+                <!-- Botón para copiar el texto encriptado/desencriptado al portapapeles -->
+                <div class="containerSalidaBotonCopiar" onclick="copiar()">
+                    <img src="./img/copy-svgrepo-com.svg" alt="Ícono de Copiar"> Copiar código
+                    <!-- Tooltip que se muestra al copiar el texto -->
+                    <span class="tooltip-text">¡Texto copiado!</span>                    
+                </div>
+            </div>            
+        </div>   
+
+        <!-- Contenedor de botones de acción: Encriptar y Desencriptar -->
+        <div class="botones">
+            <!-- Botón para encriptar el texto -->
+            <button id="btnEncriptar" onclick="encriptar()">
+                Encriptar
+                <span class="tooltip-text">¡Texto encriptado!</span>
+            </button>
+
+            <!-- Botón para desencriptar el texto -->
+            <button id="btnDesencriptar" onclick="desencriptar()">
+                Desencriptar
+                <span class="tooltip-text">¡Texto desencriptado!</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Pie de página con información del desarrollador -->
+    <footer>
+        <p>Desarrollado por Julio Bolaños | Año de Creación: 2024</p>
+    </footer>
+    
+    <!-- Inclusión del archivo JavaScript externo con la lógica de encriptado/desencriptado -->
+    <script src="script.js"></script>
+</body>
+</html>

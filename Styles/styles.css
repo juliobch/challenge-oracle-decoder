@@ -1,0 +1,225 @@
+/* Estilos generales del cuerpo y el contenedor principal */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(180deg, #274d66 0%, #a1a1a8 100%);
+}
+
+.container {
+    width: 90%;
+    height: 60%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(180deg, #274d66 0%, #a1a1a8 100%);
+    padding: 20px;
+    border-radius: 8px;
+    color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Estilos para el encabezado */
+.encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.encabezadoLogoH1 {
+    display: flex;
+    align-items: center;
+}
+
+.encabezado h6 {
+    align-self: flex-start;
+    margin: 0;
+}
+
+#logo {
+    width: 50px;
+    height: auto;
+    margin-right: 5px;
+}
+
+/* Estilos para el contenedor de ingreso y salida */
+.containerIngresoSalida {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 10px;
+    flex: 1;
+}
+
+.containerIngreso, .containerSalida {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    position: relative;
+}
+
+.containerIngreso {
+    background-color: #fff;
+}
+
+#ingresoTexto, #salidaTexto {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    box-sizing: border-box;
+    border: none;
+}
+
+.containerSalida {
+    background-color: rgb(248, 244, 239);
+}
+
+.containerSalidaTextArea {
+    flex: 1;
+    width: 100%;
+    height: auto;
+    background-color: rgb(248, 244, 239);
+}
+
+/* Estilos para el botón de copiar */
+.containerSalidaBotonCopiar {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: rgb(248, 244, 239);
+    color: #333;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+}
+
+.containerSalidaBotonCopiar img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Estilos para los botones */
+.botones {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.botones button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 4px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Estilos para el tooltip */
+.tooltip-text {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-text::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Mostrar tooltip */
+.show-tooltip .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Estilos para el mensaje de error */
+.mensaje-error {
+    display: none;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 5px;
+}
+
+/* Estilos para el footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    font-size: 0.8rem;
+    color: #333;
+    font-family: Arial, sans-serif;
+    background-color: linear-gradient(180deg, #274d66 0%, #a1a1a8 100%);
+    border-top: 1px solid #ddd;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 359px) and (max-height: 739px) {
+    .containerIngresoSalida {
+        flex-direction: column;
+    }
+
+    .containerIngreso, .containerSalida {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .containerSalida {
+        margin-bottom: 0;
+    }
+}
+
+/* Estilos para la imagen inicial */
+.imagen-inicial {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block; /* Mostrar la imagen inicialmente */
+    background-color: rgb(248, 244, 239);
+}
+
